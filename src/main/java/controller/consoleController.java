@@ -25,14 +25,14 @@ public class consoleController {
             return true;
         return false;
     }
-    interface InputOptions{
-        void option();
-    }
+    interface InputOptions{void option();}
+
+
     private void resolveEncounter(Hero h, Villain v) {
 
         Loot l = null;
         v.setHp( v.getHP() - (h.getattack() + h.getWeapon().getAttack()));
-        while(h.getHP() != 0 || v.getHP() != 0){
+        while(h.getHP() != 0 && v.getHP() != 0){
             h.setHp( h.getHP() + v.getAttack());
             v.setHp( v.getHP() - (h.getattack() + h.getWeapon().getAttack()));
         }
@@ -47,8 +47,7 @@ public class consoleController {
                 this.view.printToScreen("Should the Challenger Replace his " + l.getClass() + "? (y/n)");
                 if(this.getBinaryReply()){
                     this.model.resolveLoot(l, h);
-            }
-            this.model.gainExpAndLevels(v,h);
+                }
             }
         }
     }
@@ -70,6 +69,10 @@ public class consoleController {
            this.view.announceVillain(villain);
             resolveEncounter(hero,villain);
             if (hero.getHP() != 0){
+                System.out.println("Hero Dieded!");
+            }
+            else{
+                System.out.println("Hero won!");
             }
         }
     };
@@ -131,7 +134,8 @@ public class consoleController {
         Scanner scan = new Scanner(System.in);
 
         do {
-            System.out.println("These are the choices limited as they maybe, What will our challenger do ?");
+            this.view.printToScreen("These are the choices limited as they maybe, What will our challenger do ?");
+            this.view.printToScreenOption();
             input = Integer.parseInt(scan.nextLine());
         } while(input > 8 || input <= 0);
         inputOptions[input - 1].option();

@@ -7,11 +7,22 @@ public class consoleView {
 
     public void printHero(Hero v){
         System.out.println(v.getName() +
-                "is level " + v.getlevel() +
-                ", with an experience of " + v.getexperience() +
-                ", with  " + v.getHP() + " HP" +
-                ", has an attack of " + v.getattack() +
-                ", and defence of " + v.getdefence());
+                " is level " + v.getlevel() +
+                ",\nExperience : " + v.getexperience() +
+                ",\n HP : " + v.getHP()  +
+                ",\n Attack : " + v.getattack() +
+                ",\n Defence : " + v.getdefence());
+    }
+    public void printToScreenOption(){
+        System.out.printf("Enter in the number of the option you would choose" +
+                "1) Display Hero Status\n" +
+                "2) Display Location\n" +
+                "3) Go North\n" +
+                "4) Go South\n" +
+                "5) Go East\n" +
+                "6) Go West\n" +
+                "7) SaveAndQuit\n" +
+                "Choice : ");
     }
 
     public void printLocationFromStart(Hero v){
@@ -33,10 +44,7 @@ public class consoleView {
 
     }
     public void announceVillain(Villain v){
-        System.out.println("There appears to be a " + this.getClass() + "in the room");
-        System.out.println("attack : " + v.getAttack());
-        System.out.println("defence : " + v.getDefence());
-        System.out.println("The HP of the this.getClass() is " + v.getHP());
+        this.printToScreen("In the room, there appears to be a " + v.toString());
     }
     public void printRoomChange(String dir) {
         System.out.println("After much deliberation the chosen on decides to head " + dir);
