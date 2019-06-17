@@ -9,6 +9,8 @@ public class Tile{
     private Tile south;
     private Tile east;
     private Tile west;
+    private int x;
+    private int y;
 
 
     public Tile(){
@@ -36,6 +38,14 @@ public class Tile{
         this.west = west;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
     public Tile getNorth(){
         return this.north;
     }
@@ -56,5 +66,17 @@ public class Tile{
     }
     public void houseVillain(Villain v) {
         this.villain = v;
+    }
+
+    public void setVillain(Villain villain) {
+        this.villain = villain;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getX() {
+        return x;
     }
 }

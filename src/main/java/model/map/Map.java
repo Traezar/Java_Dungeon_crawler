@@ -1,6 +1,5 @@
 package model.map;
 import model.characters.Hero;
-import model.characters.badguys.Villain;
 import model.characters.badguys.VillainFactory;
 
 public class Map {
@@ -21,6 +20,8 @@ public class Map {
         for (int j = 0; j < i ; j++) {
             for (int k = 0; k < i; k++) {
                 this.map[j][k] = new Tile();
+                this.map[j][k].setX(j);
+                this.map[j][k].setY(k);
             }
         }
         for (int j = 0; j < i ; j++) {

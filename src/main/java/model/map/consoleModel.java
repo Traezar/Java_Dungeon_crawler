@@ -41,10 +41,10 @@ public class consoleModel {
             return new Weapon( "Weapon", nb);
     }
    public void resolveLoot(Loot l, Hero h) {
-       if ( l.getClass() == new Armor("a",1).getClass()){
+       if ( l.getClass() == Armor.class){
            h.setArmor((Armor) l);
        }
-       else if (l.getClass() == new Helm("a",1).getClass()) {
+       else if (l.getClass() == Helm.class) {
            h.setHelm((Helm) l);}
         else {
            h.setWeapon((Weapon)l);
@@ -58,7 +58,7 @@ public class consoleModel {
        int texp = earn + cexp;
        if (texp > tlvl){
            h.setExperience(tlvl - texp);
-           h.setLevel(h.getlevel()+ 1);
+           h.setLevel(h.getlevel() + 1);
            return;
        }
        h.setExperience(texp);

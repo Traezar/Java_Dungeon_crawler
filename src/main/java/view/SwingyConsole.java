@@ -1,10 +1,8 @@
 package view;
 
 import controller.consoleController;
-import model.characters.Hero;
 
-
-public class Swingy {
+public class SwingyConsole {
 
     public static void main(String[] args)
     {

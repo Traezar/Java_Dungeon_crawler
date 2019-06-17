@@ -1,10 +1,12 @@
 package model.characters;
 import model.map.*;
 
+import org.hibernate.validator.*;
+
 public class Hero {
     private Tile location;
-    private int tLat;
-    private int tLong;
+    private int Tlat;
+    private int Tlong;
     private String name;
     private String role;
     private int level;
@@ -18,14 +20,26 @@ public class Hero {
 
     private Hero(){};
     public int getlatitude() {
-        return this.tLat;
+        return this.Tlat;
     }
     public int getlongtitude() {
-        return this.tLong;
+        return this.Tlong;
     }
 
+    public void increaseTlat() {
+        this.Tlat++;
+    }
 
+    public void increaseTlong() {
+        this.Tlong++;
+    }
+    public void decreaseTlat() {
+        this.Tlat--;
+    }
 
+    public void decreaseTlong() {
+        this.Tlong--;
+    }
 
     public static class HeroBuilder{
         private String name;
@@ -75,8 +89,8 @@ public class Hero {
             chosen.equipArmor(new Armor("Basic", 1));
             chosen.equipWeapon(new Weapon("Basic", 1));
             chosen.equipHelm(new Helm("Basic", 1));
-            chosen.tLat =0;
-            chosen.tLong=0;
+            chosen.Tlat =0;
+            chosen.Tlong=0;
             return chosen;
         }
     }

@@ -7,14 +7,13 @@ import javax.swing.*;
 public class Dragon extends Villain{
 
     public Dragon(int lvl){
-        super(lvl, lvl * 2 , (lvl * 3)/2,lvl *4);
+        super(lvl, lvl * 2 ,lvl *4);
 
     }
     @Override
     public String toString() {
         return "Dragon\n" +
                 "attack :" + getAttack() +
-                ",\n defence :" + getDefence() +
                 ",\n HP : " + this.getHP()
                 ;
     }

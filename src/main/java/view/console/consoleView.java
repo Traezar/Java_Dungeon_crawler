@@ -1,7 +1,9 @@
 package view.console;
+import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
 import model.*;
 import model.characters.Hero;
 import model.characters.badguys.Villain;
+import model.map.Tile;
 
 public class consoleView {
 
@@ -46,8 +48,10 @@ public class consoleView {
     public void announceVillain(Villain v){
         this.printToScreen("In the room, there appears to be a " + v.toString());
     }
-    public void printRoomChange(String dir) {
+    public void printRoomChange(Tile current, Tile next, String dir) {
         System.out.println("After much deliberation the chosen on decides to head " + dir);
+        System.out.println("The Hero moves from ("+ current.getX()+ ", " + current.getY() + ") to (" +
+                next.getX()+ ", " + next.getY() +")");
     }
 
     public void printToScreen(String s) {
