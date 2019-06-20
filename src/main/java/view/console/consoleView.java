@@ -1,6 +1,5 @@
 package view.console;
-import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
-import model.*;
+
 import model.characters.Hero;
 import model.characters.badguys.Villain;
 import model.map.Tile;

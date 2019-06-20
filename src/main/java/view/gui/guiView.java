@@ -1,8 +1,12 @@
 package view.gui;
+import model.characters.Hero;
+
 import javax.swing.*;
-import javax.awt.*;
+import java.awt.Frame;
+import java.util.Scanner;
 
 public class guiView {
-    JFrame frame = new JFrame("Test");
-    frame.
+
+
+
 }

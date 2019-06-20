@@ -9,7 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="11.0" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="" scope="PROVIDED">
       <library>
@@ -46,5 +46,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="jdk-11.0.2" level="project" />
+    <orderEntry type="library" name="validation-api-2.0.1.Final" level="project" />
   </component>
 </module>

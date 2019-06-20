@@ -1,13 +1,16 @@
-/nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/view/Swingy.java
+/nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/view/gui/Mainframe.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/characters/badguys/Villain.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/characters/Loot.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/view/console/consoleView.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/map/consoleModel.java
+/nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/SwingyConsole.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/experience/Experience.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/characters/Helm.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/characters/badguys/Goblin.java
+/nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/SwingyGui.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/characters/badguys/VillainFactory.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/characters/Weapon.java
+/nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/controller/guiController.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/characters/badguys/Troll.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/map/Map.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/combat/combat.java
@@ -16,3 +19,4 @@
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/map/Tile.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/characters/Hero.java
 /nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/model/characters/Armor.java
+/nfs/2018/r/rsathiad/IdeaProjects/swingy/src/main/java/view/gui/guiView.java
