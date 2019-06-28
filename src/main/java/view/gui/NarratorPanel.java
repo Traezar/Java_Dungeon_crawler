@@ -12,11 +12,11 @@ public class NarratorPanel extends JTextArea{
         String title = "Event Log";
         Border b = BorderFactory.createTitledBorder(title);
         this.setBorder(b);
-        this.setSize(300,800);
+        this.setSize(800,300);
     }
 
     public void addEvent(String event){
-        this.append(event);
+        this.append("\n"+ event);
     }
 
     public void clearEvents(){

@@ -14,8 +14,8 @@ public class DungeonPanel extends JPanel {
     final JTextField Attack = new JTextField(10);
     final JTextField HP = new JTextField(10);
     JLabel VillainLabel = new JLabel("Name");
-    JLabel AttackLabel = new JLabel("Role");
-    JLabel HPLabel = new JLabel("Level");
+    JLabel AttackLabel = new JLabel("Attack");
+    JLabel HPLabel = new JLabel("HP");
     JButton fightButton = new JButton("Fight!");
     JButton runButton = new JButton("RUN!!");
 
@@ -33,7 +33,9 @@ public class DungeonPanel extends JPanel {
         this.add(AttackLabel);
         this.add(Attack);
         this.add(HPLabel);
-        this.add(HPLabel);
+        this.add(HP);
+        this.add(fightButton);
+        this.add(runButton);
         fightButton.addActionListener(new FightListener(c));
         runButton.addActionListener(new RunListener(c));
     }

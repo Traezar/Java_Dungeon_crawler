@@ -4,26 +4,22 @@ import model.characters.Hero;
 import model.characters.Loot;
 import model.characters.badguys.Villain;
 import model.map.Tile;
-import model.map.consoleModel;
-import view.console.consoleView;
+import model.Model;
+import view.gui.guiView;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Paths;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
 
-import static java.nio.file.Files.readAllLines;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class guiController{
-    private consoleModel model;
-    private consoleModel
+    private Model model;
+    private guiView view;
 
     public guiController() {
-        this.model = new consoleModel();
+        this.model = new Model();
     }
-    public consoleModel getModel() {
+    public Model getModel() {
         return model;
     }
     private Boolean getBinaryReply() {
@@ -128,26 +124,6 @@ public class guiController{
             new consoleController.InputOptions() { public void option() { goWest();}},
             new consoleController.InputOptions() { public void option() { SaveHeroandQuit();}},
     };
-    public void ChooseHero(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("What is the Name of the Chosen One ?\nDeclare Yourself : ");
-        String name = scan.nextLine();
-        System.out.println("Are you a Warrior or a Mage ? : ");
-        String role = scan.nextLine();
-        System.out.println("What is your level : ?");
-        String lv = scan.nextLine();
-        int level = Integer.parseInt(lv);
-        Hero chosen = new Hero.HeroBuilder(name)
-                .setlevel(level)
-                .setrole(role)
-                .setattack(level + 30)
-                .setdefence(level + 20)
-                .setexperience(0)
-                .setHP(level*2 + 100)
-                .Build();
-        this.model.setHero(chosen);
-        // view action this.view.printHero(this.model.getHero());
-    }
     public void ModelInitMap(){
         this.model.setMap(this.model.getHero());
     }
@@ -157,41 +133,33 @@ public class guiController{
     public void UpdateLocation(){
         // view actionthis.view.printLocationFromStart(this.model.getHero());
     }
-    public boolean gameStillRunning() {
-        return (!this.model.win && !this.model.lose);
-    }
-    public void getInputAndUpdateModel() {
-        int input;
-        Scanner scan = new Scanner(System.in);
 
-        do {
-            // view action   this.view.printToScreen("These are the choices limited as they maybe, What will our challenger do ?");
-            // view action  this.view.printToScreenOption();
-            input = Integer.parseInt(scan.nextLine());
-        } while(input > 8 || input <= 0);
-        inputOptions[input - 1].option();
+    public void initView(){
+        this.view = new guiView(this);
     }
 
-    //View Controls
-    public List<String> readFileIntoList(String fname){
-        List<String> list = Collections.EMPTY_LIST;
-        try{
-            list = readAllLines(Paths.get(fname), StandardCharsets.UTF_8);
+    public guiView getView() {
+        return view;
+    }
+
+    public void Narrate(String str){
+        this.view.Narrate(str);
+    }
+
+    public Vector<String> readFileintoVector(){
+        Vector <String> list = new Vector<String>();
+        list.add("Saved Heroes");
+        try {
+            File file = new File("./Saved.txt");
+            Scanner c = new Scanner(file);
+            while(c.hasNextLine())
+                list.add(c.nextLine());
         }
-        catch(IOException e){
-            return (list = Collections.EMPTY_LIST);
+        catch(FileNotFoundException e){
+            list.add("No Saved Heroes");
+            return list;
         }
         return list;
     }
-    public void AddEventToNarrator(){
-        this.
-    }
-
-
-
-
-
-
-
 }
 

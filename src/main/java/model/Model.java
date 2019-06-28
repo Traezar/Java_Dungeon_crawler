@@ -1,17 +1,19 @@
-package model.map;
+package model;
 import model.characters.*;
 import model.characters.badguys.Villain;
+import model.map.Map;
+
 import java.util.Random;
 
 
-public class consoleModel {
-   private Map Map;
+public class Model {
+   private model.map.Map Map;
    private Hero Hero;
    public boolean win = false;
    public boolean lose = false;
    private String end;
 
-   public consoleModel(){
+   public Model(){
        this.Map = null;
        this.Hero = null;
    }

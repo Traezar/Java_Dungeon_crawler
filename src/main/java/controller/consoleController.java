@@ -2,16 +2,17 @@ package controller;
 import model.characters.Hero;
 import model.characters.Loot;
 import model.characters.badguys.Villain;
+import model.Model;
 import model.map.*;
 import view.console.consoleView;
 import java.util.Scanner;
 
 public class consoleController {
-      private  consoleModel model;
+      private Model model;
       private  consoleView  view;
 
     public consoleController() {
-        this.model = new consoleModel();
+        this.model = new Model();
         this.view = new consoleView();
     }
     private Boolean getBinaryReply() {
